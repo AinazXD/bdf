@@ -1,0 +1,342 @@
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+    background-color: #F3F3F5;
+}
+
+h1 {
+    font-size: unset;
+}
+
+/* burger */
+
+.menu-btn {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+.menu-btn:active {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    z-index: 2;
+    overflow: hidden;
+}
+
+
+
+.burg_ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding-top: 20px;
+  }
+.menu-btn span {
+    width: 30px;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #222222;
+    transition: all 0.5s;
+}
+
+.menu-btn span:nth-of-type(2) {
+    top: calc(50% - 5px);
+}
+
+.menu-btn span:nth-of-type(3) {
+    top: calc(50% + 5px);
+}
+
+/* Меняем гамбургер иконку, когда меню открыто */
+.menu-btn.active span:nth-of-type(1) {
+    display: none;
+}
+
+.menu-btn.active span:nth-of-type(2) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(45deg);
+}
+
+.menu-btn.active span:nth-of-type(3) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(-45deg);
+}
+
+/* Меню, которое будет появляться */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+}
+
+
+.menu.active {
+    transform: translateX(0);
+    height: 100px;
+    background-color: white !important;
+}
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding-top: 30px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.menu li {
+    list-style-type: none;
+}
+
+@media(max-width:768px) {
+    .menu.active {
+        transform: translateX(0);
+        height: 100%;
+    }
+
+    ul {
+        display: block;
+    }
+
+    li {
+        padding-bottom: 30px;
+        font-size: 35px;
+    }
+}
+
+
+/* end */
+/* drop */
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-options {
+    display: none;
+    position: absolute;
+    overflow: auto;
+    left: 30px;
+}
+
+.dropdown:hover .dropdown-options {
+    display: block;
+}
+
+
+
+/* шапка */
+.header {
+    margin: 0 72px;
+    align-items: center;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.circle img {
+    border-radius: 120px;
+}
+
+.nav_menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+
+.logo {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    margin-right: 116px;
+    cursor: pointer;
+}
+
+.logo img:hover {
+    animation: rotate 0.8s linear;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+.a_logo {
+    color: black;
+}
+
+.a_logo:hover {
+    box-shadow:
+        1px 1px #000000,
+        2px 2px #000000,
+        3px 3px #000000,
+        4px 4px #000000;
+    transform: translateX(-7px);
+}
+
+
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.line {
+    margin: 0 72px;
+    height: 1px;
+    background-color: #D8D7DB;
+}
+
+
+/* главная часть */
+
+.main {
+    background-image: url(../img/Mask\ Group.png);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 475px;
+}
+
+h1 {
+    font-size: 35px;
+    padding-top: 50px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* кнопка авторизации */
+.btn {
+    display: flex;
+    cursor: pointer;
+    margin-top: 124px;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 18px;
+    width: 279px;
+    height: 79px;
+    background-color: #1A1A1A;
+    border-radius: 15px;
+}
+
+.btn:hover {
+    transition: 1s;
+    background-color: white;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .menu.active {
+      transform: translateX(0);
+      height: 100%;
+    }
+  
+    ul {
+      display: block;
+    }
+    li {
+      padding-bottom: 30px;
+      font-size: 35px;
+    }
+  
+  .info{
+    display: block;
+  }
+  
+  .info img{
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    transform: translateX(-150%);
+    transition: transform 0.5s;
+  }
+  .a_logo{
+  display: none;
+  }
+  
+  .burg_ul{
+  display: block;
+  }
+  }
+  
+  @media (max-width:425px) {
+    .menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 15px;
+      transform: translateX(-150%);
+      transition: transform 0.5s;
+    }
+  .a_logo{
+    display: none;
+  }
+
+  .logo{
+    display: none;
+  }
+
+  .nav_menu{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .burg_ul{
+    display: block;
+  }
+  
+  
+  
+  }
